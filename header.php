@@ -19,4 +19,3 @@
 		  <?php echo blaskan_header_structure(); ?>
 		</header>
 		<!-- / #header -->
-		

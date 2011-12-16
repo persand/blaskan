@@ -36,9 +36,9 @@ function blaskan_setup() {
 	global $blaskan_options;
 
 	add_theme_support( 'automatic-feed-links' );
-	
+
 	add_theme_support( 'post-thumbnails' );
-	
+
 	load_theme_textdomain( 'blaskan', TEMPLATEPATH . '/languages' );
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
@@ -46,9 +46,9 @@ function blaskan_setup() {
 		require_once( $locale_file );
 
   add_editor_style( 'editor-style.css' );
-  
+
   add_custom_background();
-  
+
 	define( 'HEADER_TEXTCOLOR', '' );
 	define( 'HEADER_IMAGE', '' );
 
@@ -59,8 +59,8 @@ function blaskan_setup() {
 	}
 
 	define( 'NO_HEADER_TEXT', true );
-	
-	add_custom_image_header( '', 'blaskan_custom_image_header_admin' );	
+
+	add_custom_image_header( '', 'blaskan_custom_image_header_admin' );
 }
 endif;
 add_action( 'after_setup_theme', 'blaskan_setup' );
@@ -155,7 +155,7 @@ function blaskan_widgets_init() {
 		'before_title' => '<h3 class="title">',
 		'after_title' => '</h3>',
 	) );
-	
+
 	if ( BLASKAN_SIDEBARS !== 'one_sidebar' ) {
 		// Secondary sidebar
 		register_sidebar( array(
@@ -192,7 +192,7 @@ function blaskan_widgets_init() {
 			'after_title' => '</h3>',
 		) );
 	}
-	
+
 	// Footer widgets
 	register_sidebar( array(
 		'name' => __( 'Footer Widget Area', 'blaskan' ),
@@ -266,7 +266,7 @@ function blaskan_body_class($classes) {
 			$classes[] = 'background-white';
 		}
   }
-  
+
   if ( get_theme_mod( 'header_image' ) ) {
     $classes[] = 'header-image';
   }
@@ -287,10 +287,10 @@ function blaskan_body_class($classes) {
 	} else {
 		$classes[] = 'hide-content';
 	}
-	
+
 	if ( BLASKAN_SIDEBARS == 'one_sidebar' ) {
 		$classes[] = 'content-wide';
-		
+
 		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && is_active_sidebar( 'primary-page-sidebar' ) ) {
 			$classes[] = 'sidebar';
 			$classes[] = 'content-wide-sidebar';
@@ -318,11 +318,11 @@ function blaskan_body_class($classes) {
 			$classes[] = 'no-sidebars';
 		}
 	}
-	
+
 	if ( is_active_sidebar( 'footer-widget-area' ) ) {
 		$classes[] = 'footer-widgets';
 	}
-	
+
 	return $classes;
 }
 endif;
@@ -337,7 +337,7 @@ function blaskan_custom_image_header_admin() {
     #headimg {
       background-repeat: no-repeat;
       height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-      width: <?php echo HEADER_IMAGE_WIDTH; ?>px;  
+      width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
     }
   </style>
 <?php
@@ -373,10 +373,10 @@ function blaskan_header_structure( $description = '' ) {
 			$header_element = 'div';
 		}
 		$output .= '<'.$header_element.' id="site-name"><a href="'.home_url( '/' ).'" title="'. esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></'.$header_element.'>';
-				
-		$output .= blaskan_header_message( get_bloginfo( 'description' ) );	
+
+		$output .= blaskan_header_message( get_bloginfo( 'description' ) );
 	}
-			
+
 	$output .= blaskan_primary_nav();
 
 	return $output;
@@ -404,7 +404,7 @@ endif;
 if ( ! function_exists( 'blaskan_primary_nav' ) ):
 function blaskan_primary_nav() {
   $nav = wp_nav_menu( array( 'theme_location' => 'primary', 'echo' => false, 'container' => false ) );
-  
+
   // Check nav for links
   if ( strpos( $nav, '<a' ) ) {
   	if ( strpos( $nav, 'div class="menu"' ) ) {
@@ -418,7 +418,7 @@ function blaskan_primary_nav() {
 
     return '<nav id="nav" role="navigation">' . $nav_prepend . $nav . $nav_append . '</nav>';
   } else {
-    return; 
+    return;
   }
 }
 endif;
@@ -432,7 +432,7 @@ function blaskan_footer_structure() {
 
   $output .= get_sidebar( 'footer' );
 	$output .= blaskan_footer_nav();
-			
+
 	if ( blaskan_footer_message() || blaskan_footer_credits() ) :
 		$output .= '<div id="footer-info" role="contentinfo">';
 		$output .= blaskan_footer_message();
@@ -455,7 +455,7 @@ function blaskan_footer_nav() {
   if ( strpos( $nav, '<a' ) ) {
     return '<nav id="footer-nav" role="navigation">' . $nav . '</nav>';
   } else {
-    return; 
+    return;
   }
 }
 endif;
@@ -517,7 +517,7 @@ add_filter( 'the_content', 'blaskan_remove_empty_read_more_span' );
  * Remove more jump link
  * Credits: http://codex.wordpress.org/Customizing_the_Read_More#Link_Jumps_to_More_or_Top_of_Page
  */
-function blaskan_remove_more_jump_link($link) { 
+function blaskan_remove_more_jump_link($link) {
 	$offset = strpos($link, '#more-');
 	if ($offset) {
 		$end = strpos($link, '"',$offset);
@@ -616,7 +616,7 @@ endif;
 if ( ! function_exists( 'blaskan_avatar' ) ):
 function blaskan_avatar( $user ) {
 	$avatar = get_avatar( $user, 40 );
-	
+
 	if ( !empty( $avatar ) ) {
 		return '<figure>' . $avatar . '</figure>';
 	} else {

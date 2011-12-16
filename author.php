@@ -10,7 +10,7 @@
 
 				<h1 class="author-title"><?php the_author(); ?></h1>
 			</header>
-			
+
 			<?php if ( get_the_author_meta( 'description' ) ): ?>
 				<div class="author-description"><?php echo nl2br( get_the_author_meta( 'description' ) ); ?></div>
 			<?php endif; ?>

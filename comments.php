@@ -37,11 +37,11 @@
 	<?php endif; // end have_comments() ?>
 
 	<?php
-	$commentform = array( 
-		'fields' => apply_filters( 'comment_form_default_fields', 
-								
+	$commentform = array(
+		'fields' => apply_filters( 'comment_form_default_fields',
+
 		array(
-			'author' => '<label for="comment-author">' . __( 'Name', 'blaskan' ) . 
+			'author' => '<label for="comment-author">' . __( 'Name', 'blaskan' ) .
       ( $req ? ' <span class="required">' . __( '(required)', 'blaskan' ) . '</span>' : '' ) .
 			'</label> ' .
       '<input id="comment-author" name="author" type="text" value="' .
@@ -49,7 +49,7 @@
 			( $req ? ' aria-required="true"' : '' ) .
 			'>',
 
-			'email' => '<label for="comment-email">' . __( 'Email', 'blaskan' ) . 
+			'email' => '<label for="comment-email">' . __( 'Email', 'blaskan' ) .
 			( $req ? ' <span class="required">' . __( '(required - will be kept a secret)', 'blaskan' ) . '</span>' : '' ) .
 			'</label> ' .
       '<input id="comment-email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" tabindex="2"'.
