@@ -9,7 +9,7 @@ License: GNU General Public License (see license.txt)
 
 Overview:
 ---------
-Blaskan is a responsive and accessible WordPress theme that's built for 
+Blaskan is a responsive and accessible WordPress theme that's built for
 many kinds of screens.
 
 Getting started and help:

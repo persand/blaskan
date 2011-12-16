@@ -59,9 +59,9 @@ function blaskan_options_do_page() {
 			<?php $options = get_option( 'blaskan_options' ); ?>
 
 			<table class="form-table">
-			  
+
 			  <tr><th colspan="2"><strong><?php _e( 'Layout', 'blaskan' ); ?></strong></th></tr>
-			  
+
 			  <?php
 				/**
 				 * Content layout
@@ -87,7 +87,7 @@ function blaskan_options_do_page() {
 						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'Up to only one sidebar will result in a wider content column.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
-			  
+
 			  <?php
 				/**
 				 * Custom sidebars in pages?
@@ -99,7 +99,7 @@ function blaskan_options_do_page() {
 						<label class="description" for="blaskan_options[custom_sidebars_in_pages]"><?php _e( 'Use custom sidebars in pages.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
-				
+
 				<?php
 				/**
 				 * Do not hide content in listings on small screens?
@@ -169,9 +169,9 @@ function blaskan_options_do_page() {
 						<label class="description" for="blaskan_options[footer_message]"><?php _e( 'A message that is displayed in the footer.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
-				
+
 				<tr><th colspan="2"><strong><?php _e( 'Support Blaskan', 'blaskan' ); ?></strong></th></tr>
-				
+
 				<?php
 				/**
 				 * Show credits?
@@ -207,17 +207,17 @@ function blaskan_options_validate( $input ) {
 	} else {
 		$input['sidebars'] = 'one_sidebar';
 	}
-		
+
 	// Our custom sidebars value is either 0 or 1
 	if ( ! isset( $input['custom_sidebars_in_pages'] ) )
 		$input['custom_sidebars_in_pages'] = null;
 	$input['custom_sidebars_in_pages'] = ( $input['custom_sidebars_in_pages'] == 1 ? 1 : 0 );
-	
+
 	// Do not hide content in listings on small screens?
 	if ( ! isset( $input['show_content_in_listings'] ) )
 		$input['show_content_in_listings'] = null;
 	$input['show_content_in_listings'] = ( $input['show_content_in_listings'] == 1 ? 1 : 0 );
-	
+
 	// Header message may contain allowed HTML tags
 	$input['header_message'] = wp_filter_post_kses( $input['header_message'] );
 
@@ -228,10 +228,10 @@ function blaskan_options_validate( $input ) {
 
 	// Header image height
 	$input['header_image_height'] = esc_attr( $input['header_image_height'] );
-	
+
 	// Footer message may contain allowed HTML tags
 	$input['footer_message'] = wp_filter_post_kses( $input['footer_message'] );
-	
+
 	// Our show_credits value is either 0 or 1
 	if ( ! isset( $input['show_credits'] ) )
 		$input['show_credits'] = null;

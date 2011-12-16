@@ -3,9 +3,9 @@
  */
 (function(document){
 
-window.MBP = window.MBP || {}; 
+window.MBP = window.MBP || {};
 
-// Fix for iPhone viewport scale bug 
+// Fix for iPhone viewport scale bug
 // http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
 
 MBP.viewportmeta = document.querySelector && document.querySelector('meta[name="viewport"]');
@@ -105,7 +105,7 @@ MBP.ghostClickHandler = function (event) {
 if (document.addEventListener) {
     document.addEventListener('click', MBP.ghostClickHandler, true);
 }
-                            
+
 MBP.coords = [];
 
 
@@ -132,7 +132,7 @@ MBP.autogrow = function (element, lh) {
     }
 
     var setLineHeight = (lh) ? lh : 12,
-        textLineHeight = element.currentStyle ? element.currentStyle.lineHeight : 
+        textLineHeight = element.currentStyle ? element.currentStyle.lineHeight :
                          getComputedStyle(element, null).lineHeight;
 
     textLineHeight = (textLineHeight.indexOf("px") == -1) ? setLineHeight :

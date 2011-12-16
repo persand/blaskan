@@ -13,7 +13,7 @@
 
     var $option = $('<option>')
       .text(objectL10n.blaskan_navigation_title)
-      .val('')                       
+      .val('')
       .appendTo($select);
 
     $('#nav li').each(function() {
@@ -24,7 +24,7 @@
 
       var $option = $('<option>')
           .text(prefix + ' ' + $a.text())
-          .val($a.attr('href'))                       
+          .val($a.attr('href'))
           .appendTo($select);
 
       if ($li.hasClass('current_page_item')) {
