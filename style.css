@@ -1613,6 +1613,15 @@ article .content { *zoom: 1; }
   padding: 0;
 }
 
+.widget ul.children {
+  margin: 0 20px;
+  list-style: circle;
+}
+
+.widget ul.children li {
+  padding: 0;
+}
+
 @media only screen and (max-width: 1200px) {
 	
 	.sidebars #secondary .widget:first-child {
