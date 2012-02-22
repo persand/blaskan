@@ -86,13 +86,19 @@ function blaskan_setup_widths() {
 	}
 
 	if (
-		( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) ||
+		( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) )
+		||
 		( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) )
+		||
+		( BLASKAN_SIDEBARS == 'one_sidebar' && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'primary-page-sidebar' ) ) )
 	) {
 		define( 'HEADER_IMAGE_WIDTH', 1120 );
 	} elseif (
-		( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) ||
+		( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) )
+		||
 		( is_active_sidebar( 'primary-page-sidebar' ) || is_active_sidebar( 'secondary-page-sidebar' ) )
+		||
+		( BLASKAN_SIDEBARS == 'one_sidebar' && ( !is_active_sidebar( 'primary-sidebar' ) || !is_active_sidebar( 'primary-page-sidebar' ) ) )
 	) {
 		define( 'HEADER_IMAGE_WIDTH', 830 );
 	} else {
@@ -283,7 +289,7 @@ function blaskan_head() {
 	echo '<link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">'."\r";
 	echo '<meta name="HandheldFriendly" content="True">'."\r";
 	echo '<meta name="MobileOptimized" content="320">'."\r";
-	echo '<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1">'."\r";
+	echo '<meta name="viewport" content="width=device-width">'."\r";
 	echo '<meta http-equiv="cleartype" content="on">'."\r";
 	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">'."\r";
 }
@@ -505,9 +511,6 @@ function blaskan_footer() {
 	MBP.hideUrlBar();
 	</script>
 	';
-
-	// Unit PNG fix for IE 7
-	echo '<!--[if lt IE 7]><script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/unitpngfix.js"></script><![endif]-->'."\r";
 
 	// Selectivizr and Respond.js
 	echo '<!--[if (lt IE 9) & (!IEMobile)]>'."\r";

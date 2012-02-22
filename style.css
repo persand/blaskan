@@ -4,7 +4,7 @@ Theme URI: http://www.blaskan.net
 Description: Blaskan is a forever free high quality theme focused on what WordPress does best: blogging. It's fully responsive and built for smartphones, tablets, netbooks, laptops and desktops. Accessibility is highly prioritized, following the WAI-ARIA specfication as well as possible. There are a number of available options to customize how it looks and works in the theme options. You can add your own header image, background image/color, custom menus choose between two different fonts for the titles and more. Blaskan is developed with child theming in mind and is very easy and flexible to override to make it work the way you want.
 Author: Per Sandström
 Author URI: http://www.helloper.com
-Version: 2.2.1
+Version: 2.3
 Tags: custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready, black, white, light, left-sidebar, right-sidebar, photoblogging, one-column, two-columns, three-columns, custom-header, editor-style, theme-options
 License: GNU General Public License
 License URI: license.txt
@@ -485,16 +485,8 @@ button {
  * Images
  */
 
-figure,
-img,
-object,
-embed {
-  max-width: 100%;
-}
-
 img {
 	border: 0;
-	height: auto;
 }
 
 /* Contain floats: h5bp.com/q */
@@ -527,7 +519,6 @@ figcaption {
 
 iframe {
 	border: 0;
-  max-width: 100%;
 }
 
 /** =BACKGROUND IMAGE ---------- */

@@ -20,6 +20,18 @@ html {
 	-webkit-text-size-adjust: 100%; 
 }
 
+figure,
+img,
+iframe,
+object,
+embed {
+  max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
 /** =NAVIGATION  ----- */
 #nav select {
   display: none;

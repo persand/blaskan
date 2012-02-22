@@ -34,6 +34,14 @@ You may add also a custom header message and/or footer message and choose if to
 display credit links in the theme options:
 /wp-admin/themes.php?page=theme_options
 
+If need to do any customizations that requires that you modify the code then
+please use a child theme.
+Get started fast and easy using the Blaskan child theme boilerplate.
+Source code:
+http://bit.ly/blaskanchild
+Download:
+http://bit.ly/blaskanchilddownload
+
 Supported browsers and platforms:
 ---------------------------------
 * Firefox
