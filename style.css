@@ -761,12 +761,12 @@ iframe {
 }
 
 #nav ul ul {
-	display: none;
+	display: block;
 	float: left;
 	margin: 0;
 	position: absolute;
 	top: 31px;
-	left: 0;
+	left: -9999px;
 	width: 200px;
 	z-index: 99999;
 }
@@ -835,7 +835,7 @@ iframe {
 }
 
 #nav ul li:hover > ul {
-	display: block;
+	left: 0;
 }
 
 @media only screen and (max-width: 480px) {
@@ -848,7 +848,7 @@ iframe {
 	}
 
 	#nav ul li:hover > ul {
-		display: none;
+		left: -9999px;
 	}
 }
 
