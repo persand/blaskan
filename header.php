@@ -7,7 +7,7 @@
 <!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html id="blaskan" class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<title><?php wp_title( '|', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
 	<?php wp_head(); ?>
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 </head>
