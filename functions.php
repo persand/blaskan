@@ -517,7 +517,7 @@ add_filter( 'the_permalink', 'blaskan_root_relative_permalinks' );
  */
 if ( ! function_exists( 'blaskan_remove_empty_read_more_span' ) ):
 function blaskan_remove_empty_read_more_span($content) {
-	return eregi_replace( "(<p><span id=\"more-[0-9]{1,}\"></span></p>)", "", $content );
+	return preg_replace( "(<p><span id=\"more-[0-9]{1,}\"></span></p>)", "", $content );
 }
 endif;
 add_filter( 'the_content', 'blaskan_remove_empty_read_more_span' );
