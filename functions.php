@@ -111,7 +111,6 @@ function blaskan_widgets_init() {
 	                  ) );
 
 	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-4' );
-	print_r( $footer_layout );
 	$number        = str_replace( 'column-', '', $footer_layout );
 
 	if ( $number == 1 ) {

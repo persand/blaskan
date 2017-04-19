@@ -20,9 +20,12 @@ $columns_classes = array(
 	4 => 'col-md-3 col-sm-6 col-xs-12'
 );
 
-$class = $columns_classes[ count( $active_sidebars ) ];
 
-if ( ! empty( $active_sidebars ) ) { ?>
+if ( ! empty( $active_sidebars ) ) { 
+
+	$class = $columns_classes[ count( $active_sidebars ) ];
+
+	?>
 
     <div class="footer-widgets container">
         <div class="row">
